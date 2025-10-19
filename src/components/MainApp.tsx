@@ -9,7 +9,7 @@ import { AudioListener, AudioLoader, Audio } from "three";
 // Đã đổi tên từ App -> MainApp
 const MainApp: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [] = useState(false);
   const soundRef = useRef<Audio | null>(null);
   const isPlayingRef = useRef(false);
   const audioBufferRef = useRef<AudioBuffer | null>(null);
@@ -444,91 +444,10 @@ const MainApp: React.FC = () => {
     };
   }, []);
 
-  const toggleMusic = () => {
-    if (soundRef.current) {
-      if (isPlaying) {
-        soundRef.current.pause();
-        setIsPlaying(false);
-        isPlayingRef.current = false;
-      } else {
-        if (audioBufferRef.current) {
-          soundRef.current.play();
-          setIsPlaying(true);
-          isPlayingRef.current = true;
-        } else {
-          console.warn("⚠️ Nhạc 3D chưa được load xong");
-        }
-      }
-    }
-  };
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100vh" }}>
       <div ref={mountRef} style={{ width: "100%", height: "100%" }} />
-      
-      <button
-        onClick={toggleMusic}
-        style={{
-          position: "absolute",
-          top: "20px",
-          right: "20px",
-          zIndex: 1000,
-          background: "transparent",
-          border: "none",
-          borderRadius: "50%",
-          width: "50px",
-          height: "50px",
-          cursor: "pointer",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "0",
-          transition: "all 0.3s ease",
-          opacity: 0.9,
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.opacity = "1";
-          e.currentTarget.style.transform = "scale(1.1)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.opacity = "0.9";
-          e.currentTarget.style.transform = "scale(1)";
-        }}
-      >
-        {isPlaying ? (
-          <svg 
-            width="32" 
-            height="32" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-          >
-            <path 
-              d="M12 3V15M8 7V15M16 7V15M6 19C7.10457 19 8 18.1046 8 17C8 15.8954 7.10457 15 6 15C4.89543 15 4 15.8954 4 17C4 18.1046 4.89543 19 6 19ZM10 13C11.1046 13 12 12.1046 12 11C12 9.89543 11.1046 9 10 9C8.89543 9 8 9.89543 8 11C8 12.1046 8.89543 13 10 13ZM18 17C19.1046 17 20 16.1046 20 15C20 13.8954 19.1046 13 18 13C16.8954 13 16 13.8954 16 15C16 16.1046 16.8954 17 18 17Z" 
-              stroke="#985f77ff" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-              fill="none"
-            />
-          </svg>
-        ) : (
-          <svg 
-            width="32" 
-            height="32" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-          >
-            <path 
-              d="M9 18V6L21 3V15M9 18C9 19.1046 8.10457 20 7 20C5.89543 20 5 19.1046 5 18C5 16.8954 5.89543 16 7 16C8.10457 16 9 16.8954 9 18ZM21 15C21 16.1046 20.1046 17 19 17C17.8954 17 17 16.1046 17 15C17 13.8954 17.8954 13 19 13C20.1046 13 21 13.8954 21 15ZM9 9L21 6" 
-              stroke="#985f77ff" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-              fill="none"
-            />
-          </svg>
-        )}
-      </button>
     </div>
   );
 };
