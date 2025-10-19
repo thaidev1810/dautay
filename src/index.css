@@ -1,10 +1,15 @@
+/* src/index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
-  background: black;
-  overflow: hidden;
+  overflow: hidden; /* Quan trọng: Ngăn cuộn trang */
+  background-color: #0a0016; /* Màu nền mặc định cho app 3D */
 }
