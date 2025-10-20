@@ -24,7 +24,7 @@ const GiftPage: React.FC<GiftPageProps> = ({ onComplete }) => {
     
     // Dữ liệu mock (bạn có thể thay đổi)
     window.textLetterH2 = 'Happy Women Day❤️';
-    window.textLetterP = 'Gửi đến những chị gái xinh đẹp của em:> Mong chị luôn rạng rỡ, thành công và được yêu thương thật nhiều. Luôn tươi trẻ như hoa 🌸 Mạnh khỏe, hạnh phúc cả nhà đều vui 😄 Và luôn giữ nụ cười thật tươi trên môi nhé! 😊Em luôn ở đây ủng hộ chị💕';
+    window.textLetterP = 'Gửi đến chị Dâu Tâyy xinh đẹp của em:> Mong chị luôn rạng rỡ, thành công và được yêu thương thật nhiều. Luôn tươi trẻ như hoa 🌸 Mạnh khỏe, hạnh phúc cả nhà đều vui 😄 Và luôn giữ nụ cười thật tươi trên môi nhé! 😊Em luôn ở đây ủng hộ chị💕';
     window.captionImage = 'Món quà đặc biệt dành tặng những người phụ nữ tuyệt vời nhất! 🌹';
     
     const mockData = {
